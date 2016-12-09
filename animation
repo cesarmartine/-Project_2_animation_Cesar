@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+  <h4>Masterpiece?</h4>
+<div>
+<p>It is just a beautiful masterpiece.It is a piece of art which are just shapes but it is art.</p>
+<p>There really is no back round to this.These are just shapes but they are special.</p>
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="12cm" height="4cm" viewBox="0 0 1200 400"
+     xmlns="http://www.w3.org/2000/svg" version="1.1">
+  <desc>Example circle01 - circle filled with red and stroked with blue</desc>
+
+  <!-- Show outline of canvas using 'rect' element -->
+  <rect x="1" y="1" width="1198" height="398"
+        fill="none" stroke="blue" stroke-width="2"/>
+
+  <circle cx="600" cy="200" r="100"
+        fill="red" stroke="blue" stroke-width="10"  />
+        <?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="12cm" height="4cm" viewBox="0 0 1200 400"
+     xmlns="http://www.w3.org/2000/svg" version="1.1">
+  <desc>Example polygon01 - star and hexagon</desc>
+
+  <!-- Show outline of canvas using 'rect' element -->
+  <rect x="1" y="1" width="1198" height="398"
+        fill="none" stroke="blue" stroke-width="2" />
+
+  <polygon fill="red" stroke="blue" stroke-width="10"
+            points="350,75  379,161 469,161 397,215
+                    423,301 350,250 277,301 303,215
+                    231,161 321,161" />
+  <polygon fill="lime" stroke="blue" stroke-width="10"
+            points="850,75  958,137.5 958,262.5
+                    850,325 742,262.6 742,137.5" />
+</svg>
+Example polygon01
+
+</svg>
+Example circle01
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="4cm" height="2cm" viewBox="0 0 400 200"
+     xmlns="http://www.w3.org/2000/svg"
+     onload="StartAnimation(evt)" version="1.1">
+  <script type="application/ecmascript"><![CDATA[
+    var timevalue = 0;
+    var timer_increment = 50;
+    var max_time = 5000;
+    var text_element;
+    function StartAnimation(evt) {
+      text_element = evt.target.ownerDocument.getElementById("TextElement");
+      ShowAndGrowElement();
+    }
+    function ShowAndGrowElement() {
+      timevalue = timevalue + timer_increment;
+      if (timevalue > max_time)
+        return;
+      // Scale the text string gradually until it is 20 times larger
+      scalefactor = (timevalue * 20.) / max_time;
+      text_element.setAttribute("transform", "scale(" + scalefactor + ")");
+      // Make the string more opaque
+      opacityfactor = timevalue / max_time;
+      text_element.setAttribute("opacity", opacityfactor);
+      // Call ShowAndGrowElement again <timer_increment> milliseconds later.
+      setTimeout("ShowAndGrowElement()", timer_increment)
+    }
+    window.ShowAndGrowElement = ShowAndGrowElement
+  ]]></script>
+  <rect x="1" y="1" width="398" height="198"
+        fill="none" stroke="blue" stroke-width="2"/>
+  <g transform="translate(50,150)" fill="red" font-size="7">
+    <text id="TextElement">SVG</text>
+  </g>
+</svg>
+
+</div>
+  </body>
+</html>
